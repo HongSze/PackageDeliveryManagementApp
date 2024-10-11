@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-header"><strong>Delete Package</strong></div>
+      <div class="card-body">
+        <form (ngSubmit)="onDeletePackage()">
+          <div class="form-group">
+            <label for="packageId">Select Package ID:</label>
+            <select class="form-control" id="packageId" [(ngModel)]="selectedPackageId" name="packageId" required>
+              <option *ngFor="let package of packages" [value]="package._id">
+                {{ package._id }}
+              </option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-danger">Delete Package</button>
+        </form>
+      </div>
+    </div>
+  </div>

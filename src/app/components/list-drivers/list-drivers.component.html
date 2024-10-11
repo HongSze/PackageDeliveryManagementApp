@@ -1,0 +1,35 @@
+<div class="content">
+  <div class="container mt-5">
+    <div *ngIf="drivers.length === 0">
+      <h3>We have no drivers at the moment</h3>
+    </div>
+    <div *ngIf="drivers.length > 0">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Driver ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Licence</th>
+            <th>Is Active</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let driver of drivers; trackBy: trackByDriverId">
+            <td>{{ driver._id }}</td>
+            <td>{{ driver.driver_id }}</td>
+            <td>{{ driver.driver_name | uppercase }}</td>
+            <td>{{ driver.driver_department }}</td>
+            <td>{{ driver.driver_licence }}</td>
+            <td>{{ driver.driver_isActive ? 'Yes' : 'No' }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="driver._id && onDeleteDriver(driver._id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container mt-6">
+  <div class="card">
+    <div class="card-header"><strong>Add Driver</strong></div>
+    <div class="card-body">
+      <form (ngSubmit)="addDriver()">
+        <div class="form-group">
+          <label for="driver_name">Name:</label>
+          <input type="text" class="form-control" placeholder="Enter Driver Name" id="driver_name" [(ngModel)]="driver.driver_name" name="driver_name" required>
+        </div>
+        <div class="form-group">
+          <label for="driver_department">Department:</label>
+          <select class="form-control" id="driver_department" [(ngModel)]="driver.driver_department" name="driver_department" required>
+            <option value="Food">Food</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Electronic">Electronic</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="driver_licence">Licence:</label>
+          <input type="text" class="form-control" placeholder="Enter Driver Licence" id="driver_licence" [(ngModel)]="driver.driver_licence" name="driver_licence" required>
+        </div>
+        <div class="form-group">
+          <label for="driver_isActive">Is Active:</label>
+          <input type="checkbox" id="driver_isActive" [(ngModel)]="driver.driver_isActive" name="driver_isActive">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Driver</button>
+      </form>
+    </div>
+  </div>
+</div>

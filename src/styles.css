@@ -1,0 +1,109 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    background-color: #343a40;
+    padding: 1rem 0;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    margin: 0 1rem;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex: 1;
+    padding: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: -15rem;
+}
+
+.content {
+    flex: 1;
+    padding: 2rem;
+    margin-bottom: 0; /* Remove margin-bottom */
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+}
+
+th {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+td {
+    border: 1px solid #dee2e6;
+}
+
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #e9ecef;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+.footer p {
+    margin: 0.5rem 0;
+}
+
+.footer a {
+    color: #007bff;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    padding-bottom: 0.5rem; /* Reduce padding-bottom */
+    text-align: center;
+}
