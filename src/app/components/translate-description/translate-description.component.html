@@ -1,0 +1,46 @@
+<div class="container mt-6">
+  <div class="card">
+    <div class="card-header"><strong>Translate Description</strong></div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="languageSelect">Select Language:</label>
+        <select id="languageSelect" class="form-control" [(ngModel)]="selectedLanguage">
+          <option value="zh">Chinese</option>
+          <option value="ms">Malay</option>
+          <option value="ko">Korean</option>
+        </select>
+      </div>
+      <table class="table table-striped mt-3" *ngIf="packages.length > 0; else noPackages">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Weight</th>
+            <th>Destination</th>
+            <th>Description</th>
+            <th>Translate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let package of packages">
+            <td>{{ package.package_id }}</td>
+            <td>{{ package.package_title }}</td>
+            <td>{{ package.package_weight }}</td>
+            <td>{{ package.package_destination }}</td>
+            <td>{{ package.package_description }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="translateDescription(package.package_description ?? '')">Translate</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #noPackages>
+        <p>No packages found.</p>
+      </ng-template>
+      <div *ngIf="translatedDescription" class="translated-description mt-4">
+        <h3>Translated Description:</h3>
+        <p>{{ translatedDescription }}</p>
+      </div>
+    </div>
+  </div>
+</div>

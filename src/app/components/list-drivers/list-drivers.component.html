@@ -14,6 +14,7 @@
             <th>Licence</th>
             <th>Is Active</th>
             <th>Actions</th>
+            <th>Packages</th>
           </tr>
         </thead>
         <tbody>
@@ -27,9 +28,42 @@
             <td>
               <button class="btn btn-danger" (click)="driver._id && onDeleteDriver(driver._id)">Delete</button>
             </td>
+            <td>
+              <button class="btn btn-primary" (click)="showPackages(driver.driver_id)">Show Packages</button>
+            </td>
           </tr>
         </tbody>
       </table>
+    </div>
+
+
+    <div class="packages-section" *ngIf="selectedDriverPackages">
+      <h3>Packages for Driver ID: {{ selectedDriverId }}</h3>
+      <div *ngIf="selectedDriverPackages.length === 0">
+        <p>No Packages Found</p>
+      </div>
+      <div *ngIf="selectedDriverPackages.length > 0">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Weight</th>
+              <th>Destination</th>
+              <th>Is Allocated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let packageItem of selectedDriverPackages">
+              <td>{{ packageItem.package_title }}</td>
+              <td>{{ packageItem.package_description }}</td>
+              <td>{{ packageItem.package_weight | convertkg }}</td>
+              <td>{{ packageItem.package_destination }}</td>
+              <td>{{ packageItem.isAllocated ? 'Yes' : 'No' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

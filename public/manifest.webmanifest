@@ -1,6 +1,6 @@
 {
-  "name": "A3app",
-  "short_name": "A3app",
+  "name": "a3app",
+  "short_name": "a3app",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

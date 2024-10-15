@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header"><strong>Distance Calculator</strong></div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Destination</th>
+            <th>Weight</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let package of packages">
+            <td>{{ package.package_title }}</td>
+            <td>{{ package.package_destination }}</td>
+            <td>{{ package.package_weight }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="calculateDistance(package._id!, package.package_destination)">
+                Calculate Distance
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="calculatedDistance" class="distance-output mt-4">
+        <h5>Calculated Distance:</h5>
+        <p>{{ calculatedDistance }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container mt-6">
+  <div class="card">
+    <div class="card-header"><strong>Text to Speech</strong></div>
+    <div class="card-body">
+      <table class="table table-striped" *ngIf="drivers.length > 0; else noDrivers">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Licence</th>
+            <th>Convert to Speech</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let driver of drivers">
+            <td>{{ driver.driver_id }}</td>
+            <td>{{ driver.driver_name }}</td>
+            <td>{{ driver.driver_department }}</td>
+            <td>{{ driver.driver_licence }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="convertToSpeech(driver)">Convert</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #noDrivers>
+        <p>No drivers found.</p>
+      </ng-template>
+      <div *ngIf="audioUrl" class="audio-output mt-4">
+        <h3>Audio Output:</h3>
+        <audio id="audioPlayer" controls>
+          <source [src]="audioUrl" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </div>
+</div>

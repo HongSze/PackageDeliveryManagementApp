@@ -15,6 +15,7 @@
             <th>Is Allocated</th>
             <th>Driver ID</th>
             <th>Actions</th>
+            <th>Driver</th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +30,32 @@
             <td>
               <button class="btn btn-danger" (click)="packageItem._id && onDeletePackage(packageItem._id)">Delete</button>
             </td>
+            <td>
+              <button class="btn btn-primary" (click)="showDriverDetails(packageItem.driver_id)">Show Driver</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Driver Details Section -->
+    <div class="drivers-packages-container" *ngIf="selectedDriver">
+      <h3>Driver Details</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Licence</th>
+            <th>Is Active</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ selectedDriver.driver_name }}</td>
+            <td>{{ selectedDriver.driver_department }}</td>
+            <td>{{ selectedDriver.driver_licence }}</td>
+            <td>{{ selectedDriver.driver_isActive ? 'Yes' : 'No' }}</td>
           </tr>
         </tbody>
       </table>
